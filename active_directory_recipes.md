@@ -15,6 +15,11 @@ Get-ADComputer -LDAPFilter "(ms-DS-CreatorSID=*)" -Properties ms-DS-CreatorSID
 Get-ADPrincipalGroupMembership <user>|select name, groupcategory, groupscope
 ```
 
+### Add user to Group
+```
+Add-GroupMember -Identity <GROUPNAME> -Members <USER1>,<USER2>,<USER3>
+```
+
 ### List all memebers of security group
 ``` 
 Get-ADGroupMember <GROUPNAME> |Select SamAccountName | Sort-Object -Property @{Expression="<GROUPNAMEPROPERTY>"; Descending=$True} 
